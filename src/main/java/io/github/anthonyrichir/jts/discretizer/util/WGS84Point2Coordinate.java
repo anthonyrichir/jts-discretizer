@@ -1,7 +1,7 @@
 package io.github.anthonyrichir.jts.discretizer.util;
 
 import ch.hsr.geohash.WGS84Point;
-import com.vividsolutions.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Coordinate;
 import lombok.NonNull;
 
 import java.util.function.Function;

@@ -1,7 +1,7 @@
 package io.github.anthonyrichir.jts.discretizer.util;
 
 import ch.hsr.geohash.WGS84Point;
-import com.vividsolutions.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Coordinate;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,22 +18,26 @@ class Coordinate2WGS84PointTest {
 
 	@Test
 	void applyInvalidPositiveLatitude() {
-		assertThrows(IllegalArgumentException.class, () -> new Coordinate2WGS84Point().apply(new Coordinate(0.0, 91.0)));
+		assertThrows(IllegalArgumentException.class,
+				() -> new Coordinate2WGS84Point().apply(new Coordinate(0.0, 91.0)));
 	}
 
 	@Test
 	void applyInvalidNegativeLatitude() {
-		assertThrows(IllegalArgumentException.class, () -> new Coordinate2WGS84Point().apply(new Coordinate(0.0, -91.0)));
+		assertThrows(IllegalArgumentException.class,
+				() -> new Coordinate2WGS84Point().apply(new Coordinate(0.0, -91.0)));
 	}
 
 	@Test
 	void applyInvalidPositiveLongitude() {
-		assertThrows(IllegalArgumentException.class, () -> new Coordinate2WGS84Point().apply(new Coordinate(181.0, 0.0)));
+		assertThrows(IllegalArgumentException.class,
+				() -> new Coordinate2WGS84Point().apply(new Coordinate(181.0, 0.0)));
 	}
 
 	@Test
 	void applyInvalidNegativeLongitude() {
-		assertThrows(IllegalArgumentException.class, () -> new Coordinate2WGS84Point().apply(new Coordinate(-181.0, 0.0)));
+		assertThrows(IllegalArgumentException.class,
+				() -> new Coordinate2WGS84Point().apply(new Coordinate(-181.0, 0.0)));
 	}
 
 	@Test

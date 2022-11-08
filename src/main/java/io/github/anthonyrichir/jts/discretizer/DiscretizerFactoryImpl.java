@@ -2,7 +2,7 @@ package io.github.anthonyrichir.jts.discretizer;
 
 import ch.hsr.geohash.GeoHash;
 import ch.hsr.geohash.WGS84Point;
-import com.vividsolutions.jts.geom.*;
+import org.locationtech.jts.geom.*;
 import io.github.anthonyrichir.jts.discretizer.geometry.GeometryCollectionDiscretizer;
 import io.github.anthonyrichir.jts.discretizer.geometry.LineStringDiscretizer;
 import io.github.anthonyrichir.jts.discretizer.geometry.PointDiscretizer;

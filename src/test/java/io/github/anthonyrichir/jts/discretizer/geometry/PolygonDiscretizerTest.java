@@ -1,7 +1,7 @@
 package io.github.anthonyrichir.jts.discretizer.geometry;
 
 import ch.hsr.geohash.GeoHash;
-import com.vividsolutions.jts.geom.Polygon;
+import org.locationtech.jts.geom.Polygon;
 import com.vividsolutions.jts.io.ParseException;
 import io.github.anthonyrichir.jts.discretizer.util.GeoHash2ChildrenStream;
 import io.github.anthonyrichir.jts.discretizer.util.GeoHash2Geometry;

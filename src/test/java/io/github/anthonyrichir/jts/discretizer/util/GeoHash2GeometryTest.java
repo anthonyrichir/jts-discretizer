@@ -1,8 +1,8 @@
 package io.github.anthonyrichir.jts.discretizer.util;
 
 import ch.hsr.geohash.GeoHash;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

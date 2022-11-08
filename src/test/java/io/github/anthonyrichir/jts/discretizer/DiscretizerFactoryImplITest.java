@@ -1,6 +1,6 @@
 package io.github.anthonyrichir.jts.discretizer;
 
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 import com.vividsolutions.jts.io.ParseException;
 import io.github.anthonyrichir.jts.discretizer.geometry.GeometryDiscretizerTestBase;
 import org.junit.jupiter.api.Test;

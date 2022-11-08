@@ -1,6 +1,6 @@
 package io.github.anthonyrichir.jts.discretizer;
 
-import com.vividsolutions.jts.geom.*;
+import org.locationtech.jts.geom.*;
 
 /**
  * Created by anthonyrichir on 30/12/2016.

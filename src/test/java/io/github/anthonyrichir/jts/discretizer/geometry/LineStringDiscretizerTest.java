@@ -2,7 +2,7 @@ package io.github.anthonyrichir.jts.discretizer.geometry;
 
 import ch.hsr.geohash.GeoHash;
 import ch.hsr.geohash.WGS84Point;
-import com.vividsolutions.jts.geom.*;
+import org.locationtech.jts.geom.*;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTWriter;
 import io.github.anthonyrichir.jts.discretizer.util.*;
@@ -42,7 +42,7 @@ class LineStringDiscretizerTest extends GeometryDiscretizerTestBase {
 
 	@Test
 	void discretizeEmptyLineString() {
-		final LineString lineString = this.geometryFactory.createLineString(new Coordinate[]{});
+		final LineString lineString = this.geometryFactory.createLineString(new Coordinate[] {});
 		assertThrows(IllegalArgumentException.class, () -> this.discretizer.apply(lineString, 4));
 	}
 
@@ -50,7 +50,7 @@ class LineStringDiscretizerTest extends GeometryDiscretizerTestBase {
 	void discretize() throws ParseException {
 		final LineString lineString = lineString123456();
 		final Set<GeoHash> geoHashes = this.discretizer.apply(lineString, 4);
-		//printDebugWKT(lineString, geoHashes);
+		// printDebugWKT(lineString, geoHashes);
 
 		final Set<GeoHash> expected = discretized123456();
 

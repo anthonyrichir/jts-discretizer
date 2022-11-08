@@ -2,9 +2,9 @@ package io.github.anthonyrichir.jts.discretizer.util;
 
 import ch.hsr.geohash.GeoHash;
 import ch.hsr.geohash.WGS84Point;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.LineString;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.GeometryFactory;
+import org.locationtech.jts.geom.LineString;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -41,10 +41,10 @@ class SegmentDiscretizerTest {
 
 	@Test
 	void discretizeInvalidLineString() {
-		final LineString invalidLineString0 = new GeometryFactory().createLineString(new Coordinate[]{});
+		final LineString invalidLineString0 = new GeometryFactory().createLineString(new Coordinate[] {});
 		assertThrows(IllegalArgumentException.class, () -> this.segmentDiscretizer.apply(invalidLineString0, 2));
 		final LineString invalidLineString3 = new GeometryFactory().createLineString(
-				new Coordinate[]{mock(Coordinate.class), mock(Coordinate.class), mock(Coordinate.class)});
+				new Coordinate[] { mock(Coordinate.class), mock(Coordinate.class), mock(Coordinate.class) });
 		assertThrows(IllegalArgumentException.class, () -> this.segmentDiscretizer.apply(invalidLineString3, 2));
 	}
 
@@ -53,7 +53,7 @@ class SegmentDiscretizerTest {
 		final Coordinate coordinate1 = this.wgs84Point2Coordinate.apply(new WGS84Point(10.0, 10.0));
 		final Coordinate coordinate2 = this.wgs84Point2Coordinate.apply(new WGS84Point(45.0, 10.0));
 		final LineString lineString = new GeometryFactory().createLineString(
-				new Coordinate[]{coordinate1, coordinate2});
+				new Coordinate[] { coordinate1, coordinate2 });
 		final Set<GeoHash> geoHashes = this.segmentDiscretizer.apply(lineString, 2);
 		assertEquals(8, geoHashes.size());
 		final Set<GeoHash> expected = of("s1", "s4", "s5", "sh", "sj", "sn", "sp", "u0").map(GeoHash::fromGeohashString)

@@ -1,8 +1,8 @@
 package io.github.anthonyrichir.jts.discretizer.geometry;
 
 import ch.hsr.geohash.GeoHash;
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.LineString;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.LineString;
 import io.github.anthonyrichir.jts.discretizer.GeometryDiscretizer;
 import io.github.anthonyrichir.jts.discretizer.util.SegmentDiscretizer;
 import lombok.NonNull;
@@ -33,7 +33,7 @@ public class LineStringDiscretizer implements GeometryDiscretizer<LineString> {
 				index -> {
 					final Coordinate start = coordinates[index - 1];
 					final Coordinate end = coordinates[index];
-					final LineString segment = geometry.getFactory().createLineString(new Coordinate[]{start, end});
+					final LineString segment = geometry.getFactory().createLineString(new Coordinate[] { start, end });
 					return this.segmentDiscretizer.apply(segment, precision);
 				})
 				.flatMap(Set::stream)

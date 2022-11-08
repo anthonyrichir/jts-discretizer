@@ -1,9 +1,9 @@
 package io.github.anthonyrichir.jts.discretizer.geometry;
 
 import ch.hsr.geohash.GeoHash;
-import com.vividsolutions.jts.geom.GeometryCollection;
-import com.vividsolutions.jts.geom.LineString;
-import com.vividsolutions.jts.geom.MultiLineString;
+import org.locationtech.jts.geom.GeometryCollection;
+import org.locationtech.jts.geom.LineString;
+import org.locationtech.jts.geom.MultiLineString;
 import io.github.anthonyrichir.jts.discretizer.DiscretizerFactoryImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,7 +37,7 @@ class GeometryCollectionDiscretizerTest extends GeometryDiscretizerTestBase {
 	@Test
 	void discretize() {
 		final MultiLineString multiLineString = this.geometryFactory.createMultiLineString(
-				new LineString[]{lineString1234(), lineString456()});
+				new LineString[] { lineString1234(), lineString456() });
 		final Set<GeoHash> actual = this.discretizer.apply(multiLineString, 4);
 		assertEquals(discretized123456(), actual);
 	}

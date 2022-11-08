@@ -2,7 +2,7 @@ package io.github.anthonyrichir.jts.discretizer.geometry;
 
 import ch.hsr.geohash.GeoHash;
 import ch.hsr.geohash.WGS84Point;
-import com.vividsolutions.jts.geom.*;
+import org.locationtech.jts.geom.*;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
 import com.vividsolutions.jts.io.WKTWriter;
@@ -23,23 +23,23 @@ public class GeometryDiscretizerTestBase {
 	protected GeometryFactory geometryFactory = new GeometryFactory();
 
 	protected LineString lineString123456() {
-		return this.geometryFactory.createLineString(new Coordinate[]{c1(), c2(), c3(), c4(), c5(), c6()});
+		return this.geometryFactory.createLineString(new Coordinate[] { c1(), c2(), c3(), c4(), c5(), c6() });
 	}
 
 	protected LinearRing linearRing123456() {
-		return this.geometryFactory.createLinearRing(new Coordinate[]{c1(), c2(), c3(), c4(), c5(), c6(), c1()});
+		return this.geometryFactory.createLinearRing(new Coordinate[] { c1(), c2(), c3(), c4(), c5(), c6(), c1() });
 	}
 
 	protected MultiPoint multiPoint123456() {
-		return this.geometryFactory.createMultiPoint(new Coordinate[]{c1(), c2(), c3(), c4(), c5(), c6(), c1()});
+		return this.geometryFactory.createMultiPoint(new Coordinate[] { c1(), c2(), c3(), c4(), c5(), c6(), c1() });
 	}
 
 	protected MultiLineString multiLine123456() {
-		return this.geometryFactory.createMultiLineString(new LineString[]{lineString1234(), lineString456()});
+		return this.geometryFactory.createMultiLineString(new LineString[] { lineString1234(), lineString456() });
 	}
 
 	protected GeometryCollection geometryCollection() {
-		return this.geometryFactory.createGeometryCollection(new Geometry[]{lineString1234(), lineString456()});
+		return this.geometryFactory.createGeometryCollection(new Geometry[] { lineString1234(), lineString456() });
 	}
 
 	protected Set<GeoHash> discretized123456() {
@@ -51,11 +51,11 @@ public class GeometryDiscretizerTestBase {
 	}
 
 	protected LineString lineString1234() {
-		return this.geometryFactory.createLineString(new Coordinate[]{c1(), c2(), c3(), c4()});
+		return this.geometryFactory.createLineString(new Coordinate[] { c1(), c2(), c3(), c4() });
 	}
 
 	protected LineString lineString456() {
-		return this.geometryFactory.createLineString(new Coordinate[]{c4(), c5(), c6()});
+		return this.geometryFactory.createLineString(new Coordinate[] { c4(), c5(), c6() });
 	}
 
 	protected Stream<String> discretizedPolygonCluj5() {
@@ -69,7 +69,7 @@ public class GeometryDiscretizerTestBase {
 	}
 
 	protected MultiPolygon multiPolygonCluj() throws ParseException {
-		return this.geometryFactory.createMultiPolygon(new Polygon[]{polygonCluj()});
+		return this.geometryFactory.createMultiPolygon(new Polygon[] { polygonCluj() });
 	}
 
 	protected Point point(Coordinate coordinate) {

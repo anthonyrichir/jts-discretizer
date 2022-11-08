@@ -1,7 +1,7 @@
 package io.github.anthonyrichir.jts.discretizer;
 
 import ch.hsr.geohash.GeoHash;
-import com.vividsolutions.jts.geom.Geometry;
+import org.locationtech.jts.geom.Geometry;
 
 import java.util.Collections;
 import java.util.Set;

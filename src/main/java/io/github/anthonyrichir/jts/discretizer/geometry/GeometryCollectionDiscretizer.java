@@ -1,8 +1,8 @@
 package io.github.anthonyrichir.jts.discretizer.geometry;
 
 import ch.hsr.geohash.GeoHash;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryCollection;
+import org.locationtech.jts.geom.Geometry;
+import org.locationtech.jts.geom.GeometryCollection;
 import io.github.anthonyrichir.jts.discretizer.DiscretizerFactory;
 import io.github.anthonyrichir.jts.discretizer.GeometryDiscretizer;
 import lombok.NonNull;
